@@ -1,4 +1,4 @@
-package com.day01;
+package com;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
