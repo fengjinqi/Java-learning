@@ -1,5 +1,7 @@
 package com.day;
 
+import com.day01.Student;
+
 import java.util.ArrayList;
 import java.util.Random;
 

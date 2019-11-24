@@ -13,6 +13,6 @@ public class DemoHashTable {
         Hashtable<Object, Object> objectObjectHashtable = new Hashtable<>();
         Scanner scanner = new Scanner(System.in);
         scanner.next();
-        
+
     }
 }
