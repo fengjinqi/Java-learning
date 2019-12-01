@@ -7,14 +7,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="day09" />
-    <orderEntry type="module" module-name="day14" />
-    <orderEntry type="module" module-name="day02" />
-    <orderEntry type="module" module-name="day12" />
-    <orderEntry type="module" module-name="day01" />
-    <orderEntry type="module" module-name="day11" />
-    <orderEntry type="module" module-name="day03" />
     <orderEntry type="module" module-name="day06" />
+    <orderEntry type="module" module-name="day09" />
+    <orderEntry type="module" module-name="day03" />
+    <orderEntry type="module" module-name="day14" />
     <orderEntry type="module" module-name="day13" />
+    <orderEntry type="module" module-name="day12" />
+    <orderEntry type="module" module-name="day11" />
+    <orderEntry type="module" module-name="day02" />
+    <orderEntry type="module" module-name="day01" />
   </component>
 </module>
