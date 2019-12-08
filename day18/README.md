@@ -89,3 +89,102 @@ DELETE FROM 表名 [WHERE 条件];
 ```mysql
 UPDATE 表名 SET 字段=值,字段1=值 WHERE [条件];
 ```
+#DQL 查询表操作
+
+语法
+```mysql
+select 
+    字段名
+from 
+    表名
+where
+    条件
+group by 
+    分组字段
+having 
+    分组之后的条件
+order by 
+    排序
+limit 
+    分页
+```
+**查询**
+```mysql
+select 字段1,字段2 from  表名;
+```
+**去重**
+```mysql
+SELECT distinct ...字段名 from 表名;
+```
+**计算**
+```mysql
+ifnull(表达式1,表达式2):null参与的运算 计算结果都为null
+    表达式1 哪个字段需要判断是否为null
+    表达式2 替换值
+```
+**起别名**
+```mysql
+select name as 名字 from 表名;
+```
+**条件查询**
+```mysql
+select 字段 from 表 where 字段 between 20 and 30;#取20-30之间数据
+select name from student where age in (10,11,34);# || 取10或者11或者34的值
+select name from student where age is null;#取为空
+select name from student where age is not null;#不为空
+select name from student where name like '_n%';#第二个字为n的模糊查询
+select name from student where name like '___';#三个字的模糊查询
+select name from student where name like '%n%';#为n的模糊查询
+
+```
+**排序查询**
+```mysql
+select name from student order by age desc ;# desc 降序 默认升序 asc
+
+```
+**聚合函数**
+```mysql
+count();#计算个数
+max();#最大值
+min();#最小值
+sum();#计算和
+avg();#计算平均值
+
+```
+**分组**
+```mysql
+select name avg(age) from student group by sex;# 分组
+select sex,avg(age),count(id) from student where matc>70 group by sex having count(id)>2;#性别分组 查询平均年龄 分数大于70人数大于2个
+
+```
+**分页**
+```mysql
+limit 0,3;
+#(当前页面-1)*显示的条数
+```
+**约束**
+```mysql
+create table stu(
+  id int primary key auto_increment,#--->主键自增
+  name VARCHAR(20) not null ,#非空
+  phone int unique #唯一
+)
+```
+**外键约束**
+```mysql
+create table stu(
+  id int primary key auto_increment,
+  name varchar(20)
+);
+create table emp(
+  id int primary key auto_increment,
+  nam varchar(20),
+  emp_stu_id int,
+  constraint emp_stu_fk foreign key (emp_stu_id) references stu(id)
+);
+
+```
+**级联操作**
+```mysql
+alter table stu add constraint 外键 foreign key (外键字段名) references 主表名(主表列名) on UPDATE cascade on delete cascade ;
+```
